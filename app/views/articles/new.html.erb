@@ -39,13 +39,30 @@
       width: 100%;
       height: 100vh;
     }
+
+    input,
+    textarea {
+      font-size: 0.875rem;
+    }
+
+    input[type="submit"] {
+      font-size: 1rem;
+    }
+
+    input[type="text"] {
+      width: 320px;
+    }
   </style>
 </head>
 <body>
   <div class="background">
     <div class="text-center center-block content"> 
-      <h4>Welcome to Home Page</h4>
-      <p>Go to <%= link_to 'About', about_path %> Page</p>
+      <h4>Create Article</h4>
+      <%= form_for @article do |f| %>
+        <%= f.text_field :title, placeholder: "Title of Article..." %> <br/><br/>
+        <%= f.text_area :description, placeholder: "Type description of Article here...", size: "50x10" %><br/><br/>
+        <%= f.submit "Create" %>
+      <% end %>
     </div>
   </div>
 </body>

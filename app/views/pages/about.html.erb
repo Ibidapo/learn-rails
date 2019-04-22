@@ -1,6 +1,5 @@
 <!Doctype html>
 <head>
-  <Title>About</Title>
   <style>
     h2,h4 {
       margin: 20px;
@@ -22,16 +21,7 @@
       padding: 0;
     }
 
-    .header {
-      margin: auto;
-      padding-top: 0px;
-      height:600px;
-      width: 100%;
-      background:#5fcf80;
-
-    }
-
-    #home {
+    .content {
       background-color: rgba(255, 255, 255, .93);
       border-radius: 15px;
       color: #252525;
@@ -42,23 +32,6 @@
       padding: 65px 30px;
     }
 
-    .no-padding {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .about {
-      margin: 0;
-      padding: 50px 20px;
-      width: 100%;
-      background-color: #5fcf80;
-    }
-
-    .content {
-      max-width: 900px;
-      margin: auto;
-    }
-
     .background {
       background: url("http://www.sactownmag.com/Blog/2015/New-time-lapse-video-shows-Sacramento-on-the-rise/Skyline.png") no-repeat;
       overflow: hidden;
@@ -66,37 +39,14 @@
       width: 100%;
       height: 100vh;
     }
-
-    .section {
-      padding-top: 70px;
-    }
-
-    .section-box {
-      padding: 40px 50px;
-    }
-
-    .section-title {
-      font-size: 40px;
-      font-weight: 300;
-      line-height: 1.2;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-  <div id="b" class="container">
-    <div class="header"> 
-    <div class="background">
-  <div class="text-center center-block" id="home"> 
-    <h2>Ibidapo Rasheed</h2>
-      <h4>Software Developer</h4>
+  <div class="background">
+    <div class="text-center center-block content"> 
+      <h4>Welcome to About Page</h4>
       <p>Go to <%= link_to 'Home', root_path %> Page</p>
-      </div>
-      </div>
     </div>
-    </div>
-  </header>
+  </div>
 </body>
 </html>
