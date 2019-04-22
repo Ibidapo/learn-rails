@@ -1,0 +1,15 @@
+<% if @article.errors.any? %>
+  <p>Input error occured</p>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h4>Update Article <%= @article.id %></h4>
+<%= form_for @article do |f| %>
+  <%= f.text_field :title, placeholder: "Title of Article..." %> <br/><br/>
+  <%= f.text_area :description, placeholder: "Type description of Article here...", size: "50x10" %><br/><br/>
+  <%= f.submit "Update" %>
+<% end %>
