@@ -13,3 +13,8 @@
   <%= f.text_area :description, placeholder: "Type description of Article here...", size: "50x10" %><br/><br/>
   <%= f.submit "Update" %>
 <% end %>
+
+<p>
+  <span> <%= link_to "Show", article_path(@article) %> </span> | 
+  <span> <%= link_to "Back", articles_path %> </span>
+</p>
