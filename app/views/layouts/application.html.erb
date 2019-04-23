@@ -72,9 +72,7 @@
 
   <body>
     <div class="background">
-      <% flash.each do |name, msg| %>
-        <p class="flash"><%= msg %></p>
-      <% end %>
+      <%= render 'layouts/notification' %>
       <div class="text-center center-block content"> 
         <%= yield %>
       </div>
