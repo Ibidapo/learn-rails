@@ -1,8 +1,10 @@
-<%= render "form_error" %>
-<h4>Update Article <%= @article.id %></h4>
-<%= render "form" %>
-
-<p>
-  <span> <%= link_to "Show", article_path(@article) %> </span> | 
-  <span> <%= link_to "Back", articles_path %> </span>
-</p>
+<div class="container main">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h4>Update Article</h4>
+      <div class="seperator"></div>
+      <%= render "form_error" %>
+      <%= render "form" %>
+    </div>
+  </div>
+</div>

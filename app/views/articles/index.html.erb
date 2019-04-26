@@ -1,19 +1,23 @@
-<h4>Listing Articles</h4>
-<p style="position: absolute; right: 30px; top: 50px;">
-  <%= link_to "Create", new_article_path %>
-</p>
-<% @articles.each do |article| %>
-<p>
-  Title: <%= article.title %>
-</p>
-
-<p>
-  Description: <%= article.description %>
-</p>
-
-<p>
-  <span> <%= link_to "Edit", edit_article_path(article) %> </span> | 
-  <span> <%= link_to "Show", article_path(article) %> </span> |
-  <span> <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %> </span>
-</p>
-<% end %>
+<div class="container main">
+  <h2>Featured Articles</h4>
+  <div class="seperator"></div>
+  <span class="alpha-btn" id="new"><%= link_to "Create", new_article_path %></span>
+  <div class="row">
+    <% @articles.each do |article| %>
+    <div class="col-md-6 item">
+      <div class="item-content">
+        <h4><%= article.title %></h4>
+        <div class="seperator"></div>
+        <p><%= sanitize article.description %></p>
+        <div class="item-action">
+          <span><%= link_to "Read More", article_path(article) %></span>
+          <span>
+            <%= link_to "Edit", edit_article_path(article) %> | 
+            <%= link_to "Delete",  article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
+          </span>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

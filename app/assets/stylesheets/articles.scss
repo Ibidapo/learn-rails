@@ -1,0 +1,134 @@
+.seperator{
+  background:#777;
+  width:35px;
+  height:3px;
+  margin: 0 0 2rem;
+  border:none;
+}
+
+#new {
+  position: absolute;
+  background: #fff;
+  top: 2rem;
+  right: 1.5rem;
+  
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: #777;
+    padding: 1rem 2rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 0%;
+    background: #333333;
+    right: 0px;
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
+  }
+}
+
+.title{
+  text-align: center;
+  
+  .row{
+    padding: 50px 0 0;
+  }
+  
+  h1{
+    text-transform: uppercase;
+  }
+}
+
+.item {
+  position: relative;
+  margin: 1.5rem auto;
+  
+  .item-content {
+    background: #fff;
+    padding: 40px;
+    position: relative;
+    
+    &:hover:before {
+      width: 100%;
+    }
+   
+    &::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 0%;
+    background: #333333;
+    right: 0px;
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
+    }
+
+    .item-action {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.item{
+    
+  h4 {
+    font-size: 18px;
+    margin-top: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: 'Roboto', serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 2rem 0;
+  }
+    
+  a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #666666;
+    margin-top: 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border: none !important;
+} 
+
+.ql-toolbar.ql-snow {
+  background: white;
+}
+
+.ql-container.ql-snow {
+  height: 400px;
+  margin-bottom: 2rem;
+  box-shadow: 0px 0px 2px #d1d1d1 inset;
+}
+
+.ql-editor {
+  padding: 1rem 0.5rem !important;
+}

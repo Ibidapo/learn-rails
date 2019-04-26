@@ -1,7 +1,10 @@
-<% render "form_error" %>
-<h4>Create Article</h4>
-<%= render "form" %>
-
-<p>
-  <span> <%= link_to "Back", articles_path %> </span>
-</p>
+<div class="container main">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h2>Create Article</h2>
+      <div class="seperator"></div>
+      <%= render "form_error" %>
+      <%= render "form" %>
+    </div>
+  </div>
+</div>

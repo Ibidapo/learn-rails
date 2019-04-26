@@ -7,75 +7,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <style>
-      h2,h4 {
-        margin: 20px;
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
-      }
 
-      body {
-        padding-top:0px;
-        width:100%;
-        height:100%;
-        margin:0%;
-        background: ;
-      }
-
-      .container {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      .content {
-        position: relative;
-        background-color: rgba(255, 255, 255, .93);
-        border-radius: 15px;
-        color: #252525;
-        width: 450px;
-        height: auto;
-        margin: 130px auto;
-        text-align: center;
-        padding: 50px 20px;
-      }
-
-      .background {
-        background: url("http://www.sactownmag.com/Blog/2015/New-time-lapse-video-shows-Sacramento-on-the-rise/Skyline.png") no-repeat;
-        overflow: hidden;
-        background-size: cover;
-        width: 100%;
-        min-height: 100vh;
-      }
-
-      input,
-      textarea {
-        font-size: 0.875rem;
-      }
-
-      input[type="submit"] {
-        font-size: 1rem;
-      }
-
-      input[type="text"] {
-        width: 320px;
-      }
-
-      .flash {
-        color: white;
-        position: absolute;
-        top: 3rem;
-        right: 2rem;
-      }
-    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
-
   <body>
-    <div class="background">
-      <%= render 'layouts/notification' %>
-      <div class="text-center center-block content"> 
-        <%= yield %>
-      </div>
+    <header>
+       <%= render "layouts/navigation" %>
+    </header>
+    <div class="container-fluid">
+      <%= render "layouts/notification" %>
+      <%= yield %>
     </div>
+    <footer>
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>
