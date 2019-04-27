@@ -89,7 +89,7 @@
     
   h4 {
     font-size: 18px;
-    margin-top: 25px;
+    margin-top: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
@@ -127,6 +127,10 @@
   height: 400px;
   margin-bottom: 2rem;
   box-shadow: 0px 0px 2px #d1d1d1 inset;
+}
+
+.ql-editor.ql-blank::before {
+  opacity: 0.5;
 }
 
 .ql-editor {
