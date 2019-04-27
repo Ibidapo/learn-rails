@@ -8,7 +8,7 @@
       <div class="item-content">
         <h4><%= article.title %></h4>
         <div class="seperator"></div>
-        <p><%= sanitize article.description %></p>
+        <p><%= sanitize article.description.truncate(150) %></p>
         <div class="item-action">
           <span><%= link_to "Read More", article_path(article) %></span>
           <span>
