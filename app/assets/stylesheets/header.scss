@@ -4,5 +4,13 @@ header {
 
   .navbar {
     margin: 1.5rem 0;
+
+    .navbar-brand {
+      font-size: 2.5rem;
+    }
+
+    .navbar-collapse > li > a {
+      font-size: 1.5rem;
+    }
   }
 }

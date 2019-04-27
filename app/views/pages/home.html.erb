@@ -1,45 +1,21 @@
 <div class="banner"></div>
 <div class="container">
   <div class="row">
+    <% @articles[-4, 4].each do |article| %>
     <div class="col-md-6 item">
       <div class="item-content">
-        <h4>Some Kind of Title</h4>
+        <h4><%= article.title %></h4>
         <div class="seperator"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi expedita eveniet consectetur, voluptates voluptatum, sit excepturi earum. Veniam eius amet, accusantium, deserunt officia, quos qui debitis laboriosam velit quis autem!</p>
-        <a href="#">Read More
-          <i class="fa fa-long-arrow-right"></i>
-        </a>
+        <p><%= sanitize article.description.truncate(150) %></p>
+        <div class="item-action">
+          <span><%= link_to "Read More", article_path(article) %></span>
+          <span>
+            <%= link_to "Edit", edit_article_path(article) %> | 
+            <%= link_to "Delete",  article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
+          </span>
+        </div>
       </div>
     </div>
-    <div class="col-md-6 item">
-      <div class="item-content">
-        <h4>Some Kind of Title</h4>
-        <div class="seperator"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi expedita eveniet consectetur, voluptates voluptatum, sit excepturi earum. Veniam eius amet, accusantium, deserunt officia, quos qui debitis laboriosam velit quis autem!</p>
-        <a href="#">Read More
-          <i class="fa fa-long-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-6 item">
-      <div class="item-content">
-        <h4>Some Kind of Title</h4>
-        <div class="seperator"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi expedita eveniet consectetur, voluptates voluptatum, sit excepturi earum. Veniam eius amet, accusantium, deserunt officia, quos qui debitis laboriosam velit quis autem!</p>
-        <a href="#">Read More
-          <i class="fa fa-long-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-    <div class="col-md-6 item">
-      <div class="item-content">
-        <h4>Some Kind of Title</h4>
-        <div class="seperator"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi expedita eveniet consectetur, voluptates voluptatum, sit excepturi earum. Veniam eius amet, accusantium, deserunt officia, quos qui debitis laboriosam velit quis autem!</p>
-        <a href="#">Read More
-          <i class="fa fa-long-arrow-right"></i>
-        </a>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
