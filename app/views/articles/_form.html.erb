@@ -1,6 +1,6 @@
 <%= form_for @article do |f| %>
   <%= f.text_field :title, placeholder: "Type Title here..." %>
   <%= f.text_area :description, placeholder: "Type Description here...", class: 'quill_container' %>
-  <span class="alpha-btn"><%= f.submit %></span>
+  <span class="alpha-btn"><%= f.submit (@article.new_record? ? "Create" : "Update") %></span>
   <br/><br/>
 <% end %>

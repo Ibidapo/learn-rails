@@ -3,6 +3,6 @@
   <%= f.email_field :email, placeholder: "Email" %>
   <%= f.password_field :password, placeholder: "Password" %>
   <br/><br/>
-  <span class="alpha-btn"><%= f.submit "Sign up" %></span>
+  <span class="alpha-btn"><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></span>
   <br/><br/>
 <% end %>
