@@ -1,6 +1,41 @@
 .banner {
+  display: flex;
+  align-items: center;
   background: asset-url('banner.jpg') center bottom;
   background-size: cover;
   height: 550px;
   margin-bottom: 5rem;
+
+  .row {
+    width: 100%;
+
+    .banner-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+
+      #sign-up,
+      #login,
+      #intro {
+        display: none
+      }
+
+      #intro {
+        h3 {
+          line-height: 1.5;
+          text-align: center;
+        }
+      }
+
+      #sign-up,
+      #login {
+        background: whitesmoke;
+      }
+
+      .show {
+        display: block;
+      }
+    }
+  }
 }
