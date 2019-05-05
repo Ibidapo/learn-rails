@@ -16,6 +16,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'quilljs-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+# Use moment to format dates
+gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

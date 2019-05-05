@@ -93,3 +93,14 @@ form:not(.navbar-form) {
   top: 7.5rem;
   width: 100%;
 }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+small {
+  font-size: 75%;
+  font-weight: 400;
+}
