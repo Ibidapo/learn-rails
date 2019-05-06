@@ -3,6 +3,7 @@
     <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-l">
     <h2>Register Account</h2>
     <div class="seperator"></div> 
+    <%= render "users/form_error", obj: @user %>
     <%= render "users/form" %>
     <br/>
     <small>Already registered?</small>

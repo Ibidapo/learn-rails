@@ -31,6 +31,15 @@
       #sign-up,
       #login {
         background: whitesmoke;
+        padding: 3rem;
+
+        form {
+          margin-bottom: 1rem;
+
+          input[type="submit"] {
+            margin-top: 1rem;
+          }
+        }
       }
 
       .show {
