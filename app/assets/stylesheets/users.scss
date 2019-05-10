@@ -1,23 +1,34 @@
 .bio-img {
+  position: relative;
   background: asset-url('user.svg') no-repeat center center;
   height: 150px;
   width: 150px;
-  margin: 3rem auto 2rem;
+  margin: 3rem auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
 
   img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
   }
+}
 
-  #avatar-form {
-    line-height: 150px;
-    // opacity: 0;
-    cursor: pointer;
+#avatar-form {
+  font-size: 1.2rem;
+  text-align: center;
 
-    input {
-      line-height: 150px;
-      cursor: pointer;
-      box-shadow: none;
-    }
+  input {
+    margin: 1rem auto;
+  }
+
+  input[type="file"] {
+    padding: 0.5rem;
+    max-width: 200px;
+  }
+
+  input[type="submit"] {
+    display: none;
+    padding: 0.5rem 1rem;
   }
 }

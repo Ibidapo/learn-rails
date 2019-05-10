@@ -1,21 +1,22 @@
 <div class="container main">
   <div class="row">
+    <div class="col-12 text-center">
+      <h3><%= @user.username %>'s Profile</h3>
+    </div>
     <div class="col-xs-10 col-xs-offset-1 col-md-3 col-md-offset-0 text-center">
-      <h3>User Bio</h3>
       <div class="bio-img">
         <% unless @user.avatar.file.nil? %>
           <%= image_tag @user.avatar.url %>
         <% end %>
-        <%= form_for @user, url: "/upload/#{@user.id}", method: 'put', html: { id: "avatar-form" } do |f| %>
-          <%= f.file_field :avatar %>
-          <%= f.submit %>
-        <% end %>
       </div>
+      <%= form_for @user, url: "/upload/#{@user.id}", method: 'put', html: { id: "avatar-form" } do |f| %>
+        <%= f.file_field :avatar, id: "avatar-input" %>
+        <%= f.submit "Upload avatar", id: "avatar-form-btn" %>
+      <% end %>
       <p><%= @user.username %></p>
       <p><%= @user.email %></p>
     </div>
     <div class="col-xs-10 col-xs-offset-1 col-md-9 col-md-offset-0">
-      <h3 style="text-align: center">Articles</h3>
       <%= render "articles/articles", obj: @user.articles %>
     </div>
   </div>
