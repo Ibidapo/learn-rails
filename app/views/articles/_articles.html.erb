@@ -4,10 +4,16 @@
       <h4><%= article.title %></h4>
       <div class="seperator"></div>
       <div class="flex">
-        <small>by <%= article.user ? article.user.username : "Anonymous" %></small>
+        <small>by 
+          <% if article.user %>
+            &nbsp;<%= link_to article.user.username, user_path(article.user) %>
+          <% else %>
+            &nbsp;Anonymous
+          <% end %>
+        </small>
         <small><%= time_ago_in_words(article.created_at) %> ago</small>
       </div>
-      <p><%= sanitize article.description.truncate(150) %></p>
+      <div class="item-body"><%= sanitize article.description.truncate(150) %></div>
       <div class="item-action">
         <span><%= link_to "Read More", article_path(article) %></span>
         <span>

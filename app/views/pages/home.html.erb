@@ -11,21 +11,6 @@
 </div>
 <div class="container">
   <div class="row">
-    <% @articles[-4, 4].each do |article| %>
-    <div class="col-md-6 item">
-      <div class="item-content">
-        <h4><%= article.title %></h4>
-        <div class="seperator"></div>
-        <p><%= sanitize article.description.truncate(150) %></p>
-        <div class="item-action">
-          <span><%= link_to "Read More", article_path(article) %></span>
-          <span>
-            <%= link_to "Edit", edit_article_path(article) %> | 
-            <%= link_to "Delete",  article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
-          </span>
-        </div>
-      </div>
-    </div>
-    <% end %>
+    <%= render "articles/articles", obj: @articles[-4, 4] %>
   </div>
 </div>

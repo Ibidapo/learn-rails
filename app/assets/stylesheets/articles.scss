@@ -35,10 +35,18 @@
     transition: width 0.4s;
     }
 
+    .item-body {
+      min-height: 70px;
+    }
+
     .item-action {
       display: flex;
       justify-content: space-between;
     }
+  }
+
+  .item-content {
+    padding: 25px;
   }
 }
 

@@ -1,0 +1,22 @@
+<div class="container main">
+  <h2>Featured Authors</h4>
+  <div class="seperator"></div>
+  <div class="row">
+    <% @users.each do |user| %>
+      <%= link_to user_path(user) do %>
+        <div class="col-sm-6 col-md-4 item">
+          <div class="item-content item-content-sm text-center">
+            <div class="bio-img bio-img-sm">
+              <% unless user.avatar.file.nil? %>
+                <%= image_tag user.avatar.url %>
+              <% end %>
+            </div>
+            <p class="user-info"><%= user.username %></p>
+            <p class="user-info"><%= user.email %></p>
+            <p class="user-info"><%= pluralize(user.articles.count, "article") %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
