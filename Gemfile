@@ -20,6 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
 # Use Brcypt to secure password
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+# Use Carrierwave & Cloudinary to upload images and store on the Cloud
+gem 'carrierwave'
+gem 'cloudinary'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

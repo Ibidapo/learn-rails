@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :articles
 
   get 'signup', to: 'users#new'
+  put 'upload/:id', to: 'users#upload'
   resources :users, except: [:new]
 end

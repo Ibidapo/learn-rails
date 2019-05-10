@@ -1,0 +1,23 @@
+.bio-img {
+  background: asset-url('user.svg') no-repeat center center;
+  height: 150px;
+  width: 150px;
+  margin: 3rem auto 2rem;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #avatar-form {
+    line-height: 150px;
+    // opacity: 0;
+    cursor: pointer;
+
+    input {
+      line-height: 150px;
+      cursor: pointer;
+      box-shadow: none;
+    }
+  }
+}

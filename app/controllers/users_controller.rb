@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def create
-    # debugger
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to Alpha-Blog, #{@user.username}!"
@@ -24,8 +23,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def upload
+    @user = User.find(params[:id])
+    if @user.update(avatar_param)
+    flash[:success] = "Your Avatar updated successfully"
+      redirect_to user_path(@user)
+    else
+      render 'edit'
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def avatar_param
+    params.require(:user).permit(:avatar)
   end
 end
