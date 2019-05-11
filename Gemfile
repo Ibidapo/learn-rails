@@ -23,6 +23,8 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 # Use Carrierwave & Cloudinary to upload images and store on the Cloud
 gem 'carrierwave'
 gem 'cloudinary'
+# Use Will_paginate to paginate articles and authors
+gem 'will_paginate', '~> 3.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
