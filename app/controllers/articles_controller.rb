@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    redirect_to root_path unless logged_in? && current_user == @article.user
   end
 
   def destroy

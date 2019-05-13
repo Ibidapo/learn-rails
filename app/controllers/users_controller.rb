@@ -19,7 +19,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    redirect_to root_path unless logged_in? && current_user == @user
+  end
 
   def update
     if @user.update(user_params)

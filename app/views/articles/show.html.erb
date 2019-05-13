@@ -7,10 +7,12 @@
         <%= sanitize @article.description %>
         <div class="item-action">
         <span><%= link_to "Back",  articles_path %></span>
-        <span>
-          <%= link_to "Edit", edit_article_path(@article) %> | 
-          <%= link_to "Delete",  article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
-        </span>
+        <% if logged_in? && current_user == @article.user %>
+          <span>
+            <%= link_to "Edit", edit_article_path(@article) %> | 
+            <%= link_to "Delete",  article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
+          </span>
+        <% end %>
       </div>
       </div>
     </div>

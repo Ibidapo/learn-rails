@@ -9,9 +9,11 @@
           <%= image_tag @user.avatar.url %>
         <% end %>
       </div>
-      <%= form_for @user, url: "/upload/#{@user.id}", method: 'put', html: { id: "avatar-form" } do |f| %>
-        <%= f.file_field :avatar, id: "avatar-input" %>
-        <%= f.submit "Upload avatar", id: "avatar-form-btn" %>
+      <% if logged_in? && current_user == @user %>
+        <%= form_for @user, url: "/upload/#{@user.id}", method: 'put', html: { id: "avatar-form" } do |f| %>
+          <%= f.file_field :avatar, id: "avatar-input" %>
+          <%= f.submit "Upload avatar", id: "avatar-form-btn" %>
+        <% end %>
       <% end %>
       <p><%= @user.username %></p>
       <p><%= @user.email %></p>
