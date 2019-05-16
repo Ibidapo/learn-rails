@@ -16,7 +16,7 @@
       <div class="item-body"><%= sanitize article.description.truncate(150) %></div>
       <div class="item-action">
         <span><%= link_to "Read More", article_path(article) %></span>
-        <% if logged_in? && current_user == article.user %>
+        <% if logged_in? && (current_user == article.user || current_user.admin?) %>
           <span>
             <%= link_to "Edit", edit_article_path(article) %> | 
             <%= link_to "Delete",  article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>

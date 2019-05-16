@@ -7,7 +7,7 @@
         <%= sanitize @article.description %>
         <div class="item-action">
         <span><%= link_to "Back",  articles_path %></span>
-        <% if logged_in? && current_user == @article.user %>
+        <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
           <span>
             <%= link_to "Edit", edit_article_path(@article) %> | 
             <%= link_to "Delete",  article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>

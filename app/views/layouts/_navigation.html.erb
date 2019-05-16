@@ -15,8 +15,16 @@
     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "Articles", articles_path %></li>
+        <li><%= link_to "Authors", users_path %></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <% if logged_in? && current_user.admin? %>
+              <i class="fas fa-user-cog"></i>
+            <% else %>
+              <i class="fas fa-user"></i>
+            <% end %>
+            <span class="caret"></span>
+          </a>
           <ul class="dropdown-menu">
             <% unless logged_in? %>
               <li><%= link_to "Login", login_path %></li>

@@ -13,9 +13,7 @@ class ArticlesController < ApplicationController
 
   def show; end
 
-  def edit
-    redirect_to root_path unless logged_in? && current_user == @article.user
-  end
+  def edit; end
 
   def destroy
     @article.destroy
@@ -54,7 +52,7 @@ class ArticlesController < ApplicationController
     end
     
     def require_same_user
-      unless current_user == @user
+      unless logged_in? && (current_user == @article.user || current_user.admin?)
         flash[:danger] = "You can only edit or delete your Articles"
         redirect_to articles_path
       end

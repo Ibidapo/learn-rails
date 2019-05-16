@@ -60,8 +60,8 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    unless logged_in? && current_user == @user
-      flash[:danger] = "You can only edit your Account"
+    unless logged_in? && (current_user == @user || current_user.admin?)
+      flash[:danger] = "You do not privileges to this Account"
       redirect_to user_path(@user)
     end
   end
