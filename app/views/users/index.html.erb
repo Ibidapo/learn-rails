@@ -3,9 +3,9 @@
   <div class="seperator"></div>
   <div class="row">
     <% @users.each do |user| %>
-      <%= link_to user_path(user) do %>
-        <div class="col-sm-6 col-md-4 item">
-          <div class="item-content item-content-sm text-center">
+      <div class="col-sm-6 col-md-4 item">
+        <div class="item-content item-content-sm text-center">
+          <%= link_to user_path(user), class: "no-decoration" do %>
             <div class="bio-img bio-img-sm">
               <% unless user.avatar.file.nil? %>
                 <%= image_tag user.avatar.url %>
@@ -14,9 +14,14 @@
             <p class="user-info"><%= user.username %></p>
             <p class="user-info"><%= user.email %></p>
             <p class="user-info"><%= pluralize(user.articles.count, "article") %></p>
-          </div>
+          <% end %>
+          <% if logged_in? && current_user.admin? %>
+            <p class="user-action">
+              <%= link_to "Delete Account", user_path(user), method: :delete, data: {confirm: "Are you sure?"} %>
+            </p>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div>
   <div class="text-center"><%= will_paginate @users %></div>

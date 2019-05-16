@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :show, :upload]
+  before_action :set_user, only: [:edit, :update, :show, :upload, :destroy]
   before_action :require_user, only: [:edit, :update, :upload]
   before_action :require_same_user, only: [:edit, :update, :upload]
+  before_action :require_admin, only: [:destroy]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 12)
@@ -46,6 +47,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    flash[:success] = "Author and all articles have been deleted successfully"
+    redirect_to users_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)
@@ -61,8 +68,15 @@ class UsersController < ApplicationController
 
   def require_same_user
     unless logged_in? && (current_user == @user || current_user.admin?)
-      flash[:danger] = "You do not privileges to this Account"
+      flash[:danger] = "You do not have privileges to this Account"
       redirect_to user_path(@user)
+    end
+  end
+
+  def require_admin
+    unless logged_in? && current_user.admin?
+      flash[:danger] = "You do not have privileges to delete an Account"
+      redirect_to root_path
     end
   end
 end
