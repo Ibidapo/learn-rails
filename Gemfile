@@ -25,6 +25,8 @@ gem 'carrierwave'
 gem 'cloudinary'
 # Use Will_paginate to paginate articles and authors
 gem 'will_paginate', '~> 3.1.0'
+# Use for Assert_template in ActionDispatch
+gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

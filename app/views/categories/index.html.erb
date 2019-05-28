@@ -1,0 +1,15 @@
+<div class="container main">
+  <h2>Featured Categories</h4>
+  <div class="seperator"></div>
+  <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-md-3 item">
+        <%= link_to category_path(category), class: "no-decoration" do %>
+          <div class="item-content">
+            <h4><%= category.name %></h4>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
