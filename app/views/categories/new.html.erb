@@ -6,7 +6,7 @@
       <%= render "articles/form_error", obj: @category %>
       <%= form_for @category do |f| %>
         <%= f.text_field :name, placeholder: "Category name", autofocus: true %>
-        <span class="alpha-btn"><%= f.submit %></span>
+        <span class="alpha-btn"><%= f.submit "Create" %></span>
         <br/><br/>
       <% end %>
     </div>
