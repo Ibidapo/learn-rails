@@ -1,6 +1,11 @@
 <%= form_for @article do |f| %>
   <%= f.text_field :title, placeholder: "Type Title here..." %>
   <%= f.text_area :description, placeholder: "Type Description here...", class: 'quill_container' %>
+  <div class="flex-checkbox">
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+      <% cb.label {cb.check_box(class: "checkbox") + cb.text} %>
+    <% end %>
+  </div>
   <span class="alpha-btn"><%= f.submit (@article.new_record? ? "Create" : "Update") %></span>
   <br/><br/>
 <% end %>

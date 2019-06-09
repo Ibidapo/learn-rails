@@ -67,6 +67,25 @@ form:not(.navbar-form) {
   }
 }
 
+.flex-checkbox {
+  display: flex;
+  margin-bottom: 1rem;
+
+  label {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+
+    input[type="checkbox"] {
+      width: unset !important;
+      border: none !important;
+      margin: 0 0.5rem 0 0 !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
 .container-fluid {
   padding: 0;
   flex: 1;

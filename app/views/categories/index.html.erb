@@ -7,6 +7,7 @@
         <%= link_to category_path(category), class: "no-decoration" do %>
           <div class="item-content">
             <h4><%= category.name %></h4>
+            <small><%= pluralize(category.articles.count, "article") %><small>
           </div>
         <% end %>
       </div>
