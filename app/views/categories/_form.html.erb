@@ -1,0 +1,5 @@
+<%= form_for @category do |f| %>
+  <%= f.text_field :name, placeholder: "Category name", autofocus: true %>
+  <span class="alpha-btn"><%= f.submit (@category.new_record? ? "Create" : "Update") %></span>
+  <br/><br/>
+<% end %>

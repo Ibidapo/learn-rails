@@ -1,7 +1,9 @@
 <div class="container main">
   <h2>Featured Articles</h4>
   <div class="seperator"></div>
-  <span class="alpha-btn" id="new"><%= link_to "Create", new_article_path %></span>
+  <% if logged_in? %>
+    <span class="alpha-btn" id="new"><%= link_to "Create", new_article_path %></span>
+  <% end %>
   <div class="row">
     <%= render "articles", obj: @articles %>
   </div>
